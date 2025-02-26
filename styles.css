@@ -115,3 +115,7 @@ p {
     gap: 2rem;
     flex-wrap: wrap;
 }
+
+#social h3 {
+    text-align: center;
+}
