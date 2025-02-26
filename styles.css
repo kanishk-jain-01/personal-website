@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600&display=swap');
+
+:root {
+  --bg-color: #0a0a0a;
+  --text-color: #ffffff;
+  --accent-color: #00ff9d;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: 'Space Grotesk', sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+
+/* Glowing text animation for the header */
+h1 {
+  font-size: 3.5rem;
+  text-align: center;
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 10px var(--accent-color),
+                 0 0 20px var(--accent-color),
+                 0 0 30px var(--accent-color);
+  }
+  to {
+    text-shadow: 0 0 20px var(--accent-color),
+                 0 0 30px var(--accent-color),
+                 0 0 40px var(--accent-color);
+  }
+}
+
+/* Cool hover effect for links */
+a {
+  color: var(--text-color);
+  text-decoration: none;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background-color: var(--accent-color);
+  transition: width 0.3s ease;
+}
+
+a:hover {
+  color: var(--accent-color);
+}
+
+a:hover::after {
+  width: 100%;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.content-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 2rem;
+    margin: 2rem auto;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.content-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+h1, h2, h3, h4 {
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+}
+
+.mission-statement {
+    margin: 2rem auto;
+}
+
+section {
+    margin: 2rem auto;
+}
+
+p {
+    line-height: 1.6;
+    margin: 1rem 0;
+}
+
+.social-links {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
