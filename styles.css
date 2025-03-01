@@ -94,6 +94,10 @@ h1, h2, h3, h4 {
     margin-bottom: 1rem;
 }
 
+.mission-statement {
+  margin: 2rem auto;
+}
+
 section {
     margin: 2rem auto;
 }
