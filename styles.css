@@ -12,7 +12,10 @@ body {
   font-family: 'Space Grotesk', sans-serif;
   line-height: 1.6;
   margin: 0;
-  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* Glowing text animation for the header */
@@ -63,9 +66,11 @@ a:hover::after {
 }
 
 .container {
+    position: relative;
+    z-index: 1;
+    width: 100%;
     max-width: 800px;
-    margin: 0 auto;
-    padding: 2rem;
+    padding: 20px;
 }
 
 .content-card {
