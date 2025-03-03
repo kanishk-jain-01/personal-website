@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automation Guru - AI Process Automation</title>
+    <style>
+        .experience-card {
+            margin: 1.5rem 0;
+            padding: 1.5rem;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 8px;
+            transition: transform 0.2s ease;
+        }
+        
+        .experience-card:hover {
+            transform: translateX(5px);
+        }
+        
+        .experience-title {
+            color: var(--accent-color);
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .experience-points {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        
+        .experience-points li {
+            margin: 0.8rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        
+        .experience-points li::before {
+            content: "•";
+            color: var(--accent-color);
+            position: absolute;
+            left: 0;
+            font-size: 1.2rem;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: var(--accent-color);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+            transition: background-color 0.2s ease;
+        }
+        
+        .cta-button:hover {
+            background-color: var(--accent-color-dark);
+        }
+        
+        .highlight {
+            color: var(--accent-color);
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+    <div class="particles" id="particles-js"></div>
+
+    <div class="container">
+        <div class="content-card">
+            <header>
+                <h1>The Automation Guru</h1>
+                <p>Transforming Business Processes with AI-Powered Automation</p>
+            </header>
+
+            <section>
+                <h2>Why Work With Me?</h2>
+                <p>I specialize in leveraging cutting-edge AI technology to streamline your business operations, reduce costs, and boost efficiency. My expertise in process automation helps companies focus on what truly matters - growth and innovation.</p>
+                <a href="#contact" class="cta-button">Transform Your Business Today</a>
+            </section>
+
+            <section>
+                <h2>My Expertise</h2>
+                
+                <div class="experience-card">
+                    <div class="experience-title">xAI - Artificial Intelligence</div>
+                    <div class="experience-date">December 2024 - Present</div>
+                    <ul class="experience-points">
+                        <li>Partnered with technical teams to generate high-quality labeled datasets for training advanced AI models, developing automation scripts that improved data curation efficiency by over 50%.</li>
+                        <li>Provided strategic input in all-hands product feedback sessions, delivering key insights that influenced the development and refinement of <span class="highlight">Grok 3</span> before its release.</li>
+                    </ul>
+                </div>
+
+                <div class="experience-card">
+                    <div class="experience-title">Elastiq AI - Generative AI Solutions</div>
+                    <div class="experience-date">December 2023 - March 2024</div>
+                    <ul class="experience-points">
+                        <li>Designed and developed <span class="highlight">Elastiq Compose</span>, an AI-powered tool that automates the creation of short artist bios for the art industry, leveraging React (front-end) and Python with SQL (back-end).</li>
+                        <li>Collaborated with both executives and engineers, contributing to product demonstrations and client presentations for East Coast stakeholders, effectively communicating technical value to non-technical audiences.</li>
+                    </ul>
+                </div>
+
+                <div class="experience-card">
+                    <div class="experience-title">Chronus Health - Biotechnology</div>
+                    <ul class="experience-points">
+                        <li>Developed Python automation processes for the Opentrons Liquid Handling Device, improving the precision and reliability of blood testing for Carbon Dioxide and Alkaline Phosphatase in the CMP Blood Panel.</li>
+                        <li>Pioneered a Python-based data scraping tool for blood testing sensors, employing object-oriented design principles, optimizing data extraction and presentation for seamless data analysis</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section id="contact">
+                <h2>Ready to Automate?</h2>
+                <p>Let's discuss how I can optimize your business processes with AI-powered automation.</p>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/jain-kanishk/" class="cta-button">Connect on LinkedIn</a>
+                    <a href="mailto:kanishkjain01@icloud.com" class="cta-button">Email Me</a>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- Add Particles.js for cool background effect -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        particlesJS.load('particles-js', 'particles-config.json');
+    </script>
+</body>
+</html>
