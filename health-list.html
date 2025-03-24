@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Health List</title>
+    <style>
+        .health-item {
+            margin-bottom: 2rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .health-item:last-child {
+            border-bottom: none;
+        }
+        .health-item h3 {
+            margin-bottom: 0.5rem;
+        }
+        .health-item p {
+            margin: 0.5rem 0;
+            opacity: 0.8;
+        }
+        .health-item .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 0.75rem;
+        }
+        .health-item .tag {
+            background: rgba(57, 129, 217, 0.1);
+            border: 1px solid var(--accent-color);
+            padding: 0.2rem 0.6rem;
+            border-radius: 1rem;
+            font-size: 0.75rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        .health-item .tag:hover {
+            background: var(--accent-color);
+            color: #000;
+        }
+        .category-nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin: 1rem 0 2rem;
+            justify-content: center;
+        }
+        .category-btn {
+            background: rgba(57, 129, 217, 0.1);
+            border: 1px solid var(--accent-color);
+            color: var(--text-color, #fff);
+            padding: 0.5rem 1rem;
+            border-radius: 2rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .category-btn:hover, .category-btn.active {
+            background: var(--accent-color);
+            color: #000;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="content-card">
+            <header>
+                <h1>Health List</h1>
+                <div class="category-nav">
+                    <button class="category-btn active" data-category="all">All</button>
+                    <button class="category-btn" data-category="education">Education</button>
+                    <button class="category-btn" data-category="technology">Technology</button>
+                    <button class="category-btn" data-category="fitness">Fitness</button>
+                    <button class="category-btn" data-category="nutrition">Nutrition</button>
+                    <button class="category-btn" data-category="sleep">Sleep</button>
+                </div>
+            </header>
+            
+            <section>
+                <div class="health-item" data-categories="education,fitness,sleep">
+                    <h3><a href="https://hubermanlab.com">Huberman Lab</a></h3>
+                    <p>Science-based approach to health, neuroscience, and performance optimization.</p>
+                    <p>Offers: Podcasts, Research summaries, Health protocols</p>
+                    <div class="tags">
+                        <span class="tag" data-category="education">Education</span>
+                        <span class="tag" data-category="sleep">Sleep</span>
+                        <span class="tag" data-category="fitness">Fitness</span>
+                    </div>
+                </div>
+                
+                <div class="health-item" data-categories="education,nutrition">
+                    <h3><a href="https://www.foundmyfitness.com">Found My Fitness (Dr. Rhonda Patrick)</a></h3>
+                    <p>Deep dives into the science of longevity, nutrition, and metabolic health.</p>
+                    <p>Offers: Research analysis, Interviews with experts, Genetic reports</p>
+                    <div class="tags">
+                        <span class="tag" data-category="education">Education</span>
+                        <span class="tag" data-category="nutrition">Nutrition</span>
+                    </div>
+                </div>
+                
+                <div class="health-item" data-categories="technology,nutrition">
+                    <h3><a href="https://www.levelshealth.com">Levels Health</a></h3>
+                    <p>Metabolic health platform utilizing continuous glucose monitoring.</p>
+                    <p>Offers: CGM sensors, Health insights, Personalized nutrition recommendations</p>
+                    <div class="tags">
+                        <span class="tag" data-category="technology">Technology</span>
+                        <span class="tag" data-category="nutrition">Nutrition</span>
+                    </div>
+                </div>
+                
+                <div class="health-item" data-categories="education,fitness">
+                    <h3><a href="https://peterattiamd.com">Peter Attia, MD</a></h3>
+                    <p>Focuses on the science of longevity and strategies to extend lifespan and healthspan.</p>
+                    <p>Offers: Podcast content, Membership program, Medical expertise</p>
+                    <div class="tags">
+                        <span class="tag" data-category="education">Education</span>
+                        <span class="tag" data-category="fitness">Fitness</span>
+                    </div>
+                </div>
+                
+                <div class="health-item" data-categories="technology,fitness,sleep">
+                    <h3><a href="https://www.whoop.com">WHOOP</a></h3>
+                    <p>Wearable technology focused on recovery, strain, and sleep quality metrics.</p>
+                    <p>Offers: Fitness trackers, Health analytics, Recovery optimization</p>
+                    <div class="tags">
+                        <span class="tag" data-category="technology">Technology</span>
+                        <span class="tag" data-category="fitness">Fitness</span>
+                        <span class="tag" data-category="sleep">Sleep</span>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const categoryButtons = document.querySelectorAll('.category-btn');
+            const healthItems = document.querySelectorAll('.health-item');
+            const tags = document.querySelectorAll('.tag');
+            
+            // Function to filter items by category
+            function filterByCategory(category) {
+                // Remove active class from all buttons
+                categoryButtons.forEach(btn => btn.classList.remove('active'));
+                
+                // Add active class to matching button
+                document.querySelector(`.category-btn[data-category="${category}"]`).classList.add('active');
+                
+                healthItems.forEach(item => {
+                    // Show all items if "All" is selected
+                    if (category === 'all') {
+                        item.classList.remove('hidden');
+                        return;
+                    }
+                    
+                    // Check if item has the selected category
+                    const itemCategories = item.getAttribute('data-categories').split(',');
+                    if (itemCategories.includes(category)) {
+                        item.classList.remove('hidden');
+                    } else {
+                        item.classList.add('hidden');
+                    }
+                });
+            }
+            
+            // Event listener for category buttons
+            categoryButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const selectedCategory = this.getAttribute('data-category');
+                    filterByCategory(selectedCategory);
+                });
+            });
+            
+            // Event listener for tags
+            tags.forEach(tag => {
+                tag.addEventListener('click', function() {
+                    const selectedCategory = this.getAttribute('data-category');
+                    filterByCategory(selectedCategory);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
