@@ -271,12 +271,6 @@ a:hover::after {
     font-size: 1.3rem;
   }
   
-  .main-links {
-    gap: 1rem;
-    flex-direction: column;
-    align-items: center;
-  }
-  
   .post-list {
     margin: 1rem 0 2rem;
   }
