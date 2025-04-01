@@ -69,6 +69,24 @@ body::before {
   padding: 3rem;
   width: 100%;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  max-height: 80vh;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--border-color) transparent;
+}
+
+/* Webkit scrollbar styling */
+.content-card::-webkit-scrollbar {
+  width: 8px;
+}
+
+.content-card::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.content-card::-webkit-scrollbar-thumb {
+  background-color: var(--border-color);
+  border-radius: 4px;
 }
 
 h1, h2, h3, h4 {
